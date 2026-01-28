@@ -1,0 +1,14 @@
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\DndProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\DndProject.AssemblyInfoInputs.cache
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\DndProject.AssemblyInfo.cs
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\DndProject.csproj.CoreCompileInputs.cache
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\bin\Debug\net8.0\DndProject.exe
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\bin\Debug\net8.0\DndProject.deps.json
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\bin\Debug\net8.0\DndProject.runtimeconfig.json
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\bin\Debug\net8.0\DndProject.dll
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\bin\Debug\net8.0\DndProject.pdb
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\DndProject.dll
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\refint\DndProject.dll
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\DndProject.pdb
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\DndProject.genruntimeconfig.cache
+C:\Users\ypono\Desktop\Dnd_project\DndProject\DndProject\obj\Debug\net8.0\ref\DndProject.dll
