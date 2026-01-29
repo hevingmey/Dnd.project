@@ -72,7 +72,7 @@ public class GameEngine
         Log(" Game completed!");
     }
 
-    // true = бій завершився (перемога/поразка), false = гравець втік
+ 
     public bool Battle(Unit.Unit hero, Unit.Unit monster)
     {
         Log($" Battle started: {hero.Name} vs {monster.Name}");
@@ -95,7 +95,7 @@ public class GameEngine
                     break;
 
                 case PlayerAction.UsePotion:
-                    heroSpentTurn = UsePotion(hero); // якщо зілля нема — хід не витрачається
+                    heroSpentTurn = UsePotion(hero); // якщо зілля нема  хід не витрачається
                     break;
 
                 case PlayerAction.Run:
@@ -151,7 +151,7 @@ public class GameEngine
     {
         if (potions <= 0)
         {
-            Log("🧪 No potions left!");
+            Log(" No potions left!");
             return false;
         }
 
@@ -161,7 +161,7 @@ public class GameEngine
         hero.Heal(PotionHeal);
         int healed = hero.Health - before;
 
-        Log($"🧪 Potion used. Healed {healed}. Potions left: {potions}");
+        Log($" Potion used. Healed {healed}. Potions left: {potions}");
         return true;
     }
 
