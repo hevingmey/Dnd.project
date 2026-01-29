@@ -1,6 +1,10 @@
+﻿using D_D_project.Interfaces;
+using D_D_project.Items.Armor;
+using D_D_project.Items.Potions;
+using D_D_project.Items.Weapons;
+using D_D_project.Unit;
 using System;
 using System.Collections.Generic;
-using D_D_project.Unit;
 using UnitBase = D_D_project.Unit.Unit;
 
 namespace D_D_project;
@@ -22,7 +26,7 @@ public class GameEngine
     private const int PotionHeal = 20;
     private const int RunChance = 60;
 
-    
+
     public void StartGame(UnitBase hero)
     {
         var rooms = new List<Room>
@@ -75,7 +79,7 @@ public class GameEngine
         Log(" Game completed!");
     }
 
-    
+
     public bool Battle(UnitBase hero, UnitBase monster)
     {
         Log($" Battle started: {hero.Name} vs {monster.Name}");
@@ -111,8 +115,8 @@ public class GameEngine
                     break;
 
                 case PlayerAction.UseItem:
-                    ShowInventory(hero);
-                    heroSpentTurn = false;
+                    UseItemFromInventory(hero);
+                    heroSpentTurn = false; 
                     break;
             }
 
@@ -134,7 +138,7 @@ public class GameEngine
         return true;
     }
 
-    
+
     private void HeroAttack(UnitBase hero, UnitBase monster)
     {
         int before = monster.Health;
@@ -151,7 +155,7 @@ public class GameEngine
         Log($" {monster.Name} hits {hero.Name} for {dmg}. {hero.Name} HP={hero.Health}");
     }
 
-    
+
     private bool UsePotion(UnitBase hero)
     {
         if (potions <= 0)
@@ -173,7 +177,7 @@ public class GameEngine
         return roll <= RunChance;
     }
 
-  
+
     private PlayerAction AskPlayerAction()
     {
         while (true)
@@ -194,13 +198,95 @@ public class GameEngine
         }
     }
 
+    private void UseItemFromInventory(UnitBase hero)
+    {
+        if (hero.Inventory.Count == 0)
+        {
+            Log(" Inventory is empty!");
+            return;
+        }
+
+        Log("Select item to use:");
+        for (int i = 0; i < hero.Inventory.Count; i++)
+        {
+            var item = hero.Inventory[i];
+            Log($" {i + 1}) {item.Name} - {item.Description}");
+        }
+        Log(" 0) Cancel");
+
+        while (true)
+        {
+            Console.Write("> ");
+            string? input = Console.ReadLine();
+
+            if (int.TryParse(input, out int choice))
+            {
+                if (choice == 0)
+                {
+                    Log(" Cancelled.");
+                    return;
+                }
+
+                if (choice >= 1 && choice <= hero.Inventory.Count)
+                {
+                    var item = hero.Inventory[choice - 1];
+
+                    // Спробуємо використати предмет
+                    if (TryUseItem(item, hero))
+                    {
+                        // Якщо предмет одноразовий (наприклад, зілля), видаляємо його
+                        if (item is HealingPotion || item is GreaterHealingPotion)
+                        {
+                            hero.Inventory.RemoveAt(choice - 1);
+                            Log($" {item.Name} consumed.");
+                        }
+                    }
+                    return;
+                }
+            }
+            Log(" Invalid choice.");
+        }
+    }
+
+    private bool TryUseItem(IItem item, UnitBase hero)
+    {
+        // Перевіряємо тип предмета і використовуємо його
+        switch (item)
+        {
+            case HealingPotion potion:
+                int healAmount = 25; // або отримуйте з властивості
+                hero.Heal(healAmount);
+                Log($" Used {item.Name}. Healed {healAmount} HP.");
+                return true;
+
+            case GreaterHealingPotion greaterPotion:
+                int greaterHealAmount = 50;
+                hero.Heal(greaterHealAmount);
+                Log($" Used {item.Name}. Healed {greaterHealAmount} HP.");
+                return true;
+
+            // Додайте інші типи предметів
+            case Sword sword:
+                Log($" {sword.Name} is a weapon. Equip it from menu.");
+                return false;
+
+            case ChainmailArmor armor:
+                Log($" {armor.Name} is armor. Equip it from menu.");
+                return false;
+
+            default:
+                Log($" Cannot use {item.Name} in battle.");
+                return false;
+        }
+    }
+
     private void LogHeroInfo(UnitBase hero)
     {
         Log($" {hero.Name} | HP: {hero.Health} | ATK: {hero.AttackPower}");
         ShowInventory(hero);
     }
 
-    private void ShowInventory(UnitBase hero)
+    public void ShowInventory(UnitBase hero)
     {
         Log(" Inventory:");
 
