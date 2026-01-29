@@ -101,7 +101,7 @@ public class GameEngine
                 case PlayerAction.Run:
                     if (TryRun())
                     {
-                        Log("🏃 Escape successful!");
+                        Log("Escape successful!");
                         Log("");
                         return false;
                     }
