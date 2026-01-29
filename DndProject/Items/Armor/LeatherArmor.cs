@@ -9,20 +9,20 @@ namespace DndProject.Items.Armor
 {
     public class LeatherArmor : IItem, IEquippable
     {
-        public string Name => "Шкіра Вовкулаки";
-        public string Description => "Легка броня зі шкіри вовкулаки. Захист: 3.";
+        public string Name => "Werewolf Hide";
+        public string Description => "Light armor made from werewolf skin. Defense: 3.";
 
         public int Defense => 3;
 
         public void Equip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} надіває {Name}!");
+            Console.WriteLine($"{hero.Name} equips {Name}!");
             
         }
 
         public void Unequip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} знімає {Name}!");
+            Console.WriteLine($"{hero.Name} unequips {Name}!");
             
         }
 

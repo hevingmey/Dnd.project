@@ -9,22 +9,21 @@ namespace DndProject.Items.Armor
 {
     public class PlateArmor : IItem, IEquippable
     {
-        public string Name => "Панцир Базиліска";
-        public string Description => "Важкі пластини з каменіючої шкіри базиліска. Захист: 12.";
+        public string Name => "Basilisk Carapace";
+        public string Description => "Heavy plates made from the petrifying skin of a basilisk. Defense: 12.";
 
         public int Defense => 12;
 
         public void Equip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} надіває {Name}!");
-            Console.WriteLine("Броня важка, але надійна!");
+            Console.WriteLine($"{hero.Name} equips {Name}!");
+            Console.WriteLine("The armor is heavy but reliable!");
             
         }
 
         public void Unequip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} знімає {Name}!");
-            
+            Console.WriteLine($"{hero.Name} unequips {Name}!");   
         }
 
         public int CalculateDamage(int incomingDamage)

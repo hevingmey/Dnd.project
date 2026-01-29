@@ -9,22 +9,21 @@ namespace DndProject.Items.Weapons
 {
     public class Axe : IItem, IEquippable
     {
-        public string Name => "Сокира Громовержця";
-        public string Description => "Велика сокира, що гудить від енергії. Бонус атаки: +15.";
+        public string Name => "Thunderaxe";
+        public string Description => "A massive axe humming with energy. Attack bonus: +15.";
 
         public int AttackBonus => 15;
 
         public void Equip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} бере в руки {Name}!");
-            Console.WriteLine("Сокира важка, але потужна!");
+            Console.WriteLine($"{hero.Name} wields the {Name}!");
+            Console.WriteLine("The axe is heavy but powerful!");
             
         }
 
         public void Unequip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} кладе {Name}!");
-            
+            Console.WriteLine($"{hero.Name} puts down the {Name}!");
         }
     }
 }

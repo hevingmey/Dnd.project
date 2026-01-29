@@ -9,12 +9,12 @@ namespace DndProject.Items.Potions
 {
     public class HealingPotion : IItem, IUsable
     {
-        public string Name => "Кров Дракона";
-        public string Description => "Густа червона рідина, що пульсує теплом. Лікує 30 HP.";
+        public string Name => "Dragon's Blood";
+        public string Description => "A thick red liquid that pulses with warmth. Heals 30 HP.";
 
         public void Use(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} випив(ла) {Name}!");
+            Console.WriteLine($"{hero.Name} drinks the {Name}!");
             hero.Heal(30);
         }
     }

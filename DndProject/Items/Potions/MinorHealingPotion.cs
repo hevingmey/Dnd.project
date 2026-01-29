@@ -9,12 +9,12 @@ namespace DndProject.Items.Potions
 {
     public class MinorHealingPotion : IItem, IUsable
     {
-        public string Name => "Настій Чистоти";
-        public string Description => "Маленька пляшечка з цілющим настоєм. Лікує 15 HP.";
+        public string Name => "Purity Infusion";
+        public string Description => "A small vial with a healing infusion. Heals 15 HP.";
 
         public void Use(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} випив(ла) {Name}!");
+            Console.WriteLine($"{hero.Name} drink the {Name}!");
             hero.Heal(15);
         }
     }

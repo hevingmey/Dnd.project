@@ -9,20 +9,20 @@ namespace DndProject.Items.Armor
 {
     public class ChainmailArmor : IItem, IEquippable
     {
-        public string Name => "Кольчуга Лісового Ельфа";
-        public string Description => "Міцна кольчуга, плетена ельфійськими майстрами. Захист: 6.";
+        public string Name => "Forest Elf Chainmail";
+        public string Description => "Durable chainmail woven by elven masters. Defense: 6.";
 
         public int Defense => 6;
 
         public void Equip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} надіває {Name}!");
+            Console.WriteLine($"{hero.Name} equips {Name}!");
             
         }
 
         public void Unequip(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} знімає {Name}!");
+            Console.WriteLine($"{hero.Name} unequips {Name}!");
             
         }
 

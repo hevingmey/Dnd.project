@@ -9,14 +9,14 @@ namespace DndProject.Items.Potions
 {
     public class GreaterHealingPotion : IItem, IUsable
     {
-        public string Name => "Серце Фенікса";
-        public string Description => "Сяючий еліксир з часткою безсмертя. Лікує 50 HP.";
+        public string Name => "Phoenix Heart";
+        public string Description => "A glowing elixir containing a fragment of immortality. Heals 50 HP.";
 
         public void Use(Hero hero)
         {
-            Console.WriteLine($"{hero.Name} випив(ла) {Name}!");
+            Console.WriteLine($"{hero.Name} drinks the {Name}!");
             hero.Heal(50);
-            Console.WriteLine("Відчувається прилив сил!");
+            Console.WriteLine("A surge of energy flows through you!");
         }
     }
 }
