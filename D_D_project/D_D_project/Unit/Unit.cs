@@ -3,6 +3,7 @@ namespace D_D_project.Unit;
 public abstract class Unit
 {
     private int health;
+    public int LastAttackDamage { get; protected set; }
 
     public string Name { get; }
     public int Health => health;
@@ -23,10 +24,10 @@ public abstract class Unit
     }
    
 
-    protected void Heal(int amount)
+    public void Heal(int amount)
     {
         if (amount < 0) amount = 0;
-        health += amount; 
+        health += amount;
     }
 
     public abstract void Attack(Unit target);
