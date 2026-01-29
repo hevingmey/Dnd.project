@@ -1,9 +1,12 @@
+using System.Collections.Generic;
+
 namespace D_D_project.Unit;
 
 public abstract class Unit
 {
     private int health;
     public int LastAttackDamage { get; protected set; }
+    public List<IItem> Inventory { get; } = new();
 
     public string Name { get; }
     public int Health => health;

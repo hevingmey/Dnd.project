@@ -10,7 +10,8 @@ class Program
         var engine = new GameEngine();
         engine.OnMessageLog += Console.WriteLine;
 
-        Unit.Unit hero = new Knight("Reagen");
+       Hero hero = new Knight("Reagen");
+       
         engine.StartGame(hero);
 
         Console.ReadLine();

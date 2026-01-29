@@ -1,3 +1,4 @@
+
 namespace D_D_project.Unit;
 
 public class Knight : Hero
@@ -5,7 +6,10 @@ public class Knight : Hero
     public Knight(string name)
         : base(name, health: 55, attackPower: 6)
     {
+        
     }
+    
+    
 
     protected override void LevelUp()
     {
@@ -24,3 +28,4 @@ public class Knight : Hero
         target.TakeDamage(damage);
     }
 }
+
