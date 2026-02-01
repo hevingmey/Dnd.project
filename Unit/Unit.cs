@@ -1,11 +1,12 @@
-using System.Collections.Generic;
+﻿using D_D_project.Interfaces;  
+
 
 namespace D_D_project.Unit;
 
 public abstract class Unit
 {
     private int health;
-    public int LastAttackDamage { get; protected set; }
+    
     public List<IItem> Inventory { get; } = new();
 
     public string Name { get; }
@@ -25,7 +26,7 @@ public abstract class Unit
         if (damage < 0) damage = 0;
         health = Math.Max(0, health - damage);
     }
-   
+
 
     public void Heal(int amount)
     {

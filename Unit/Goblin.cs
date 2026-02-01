@@ -1,4 +1,4 @@
-using D_D_project.Unit;
+﻿using D_D_project.Interfaces;
 namespace D_D_project.Unit;
 
 public class Goblin : Monster

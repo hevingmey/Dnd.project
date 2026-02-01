@@ -1,4 +1,6 @@
+﻿using D_D_project.Interfaces;
 using System.Collections.Generic;
+using D_D_project.Unit;
 
 namespace D_D_project.Unit;
 
@@ -6,7 +8,7 @@ public abstract class Hero : Unit
 {
     private int experience;
 
-    public int Experience => experience;
+    
     public int Level { get; private set; } = 1;
 
     public List<IItem> Inventory { get; } = new();

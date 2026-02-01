@@ -1,8 +1,9 @@
+﻿using D_D_project.Interfaces;
 namespace D_D_project.Unit;
 
 public class Boss : Monster
 {
-    private int phase = 1;
+    // private int phase = 1;
 
     public Boss(IItem? loot = null)
         : base("Boss", health: 80, attackPower: 10, xpReward: 120, loot: loot)
