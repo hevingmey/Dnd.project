@@ -13,7 +13,12 @@ class Program
 
 
         var engine = new GameEngine();
-        engine.OnMessageLog += Console.WriteLine;
+
+        engine.OnMessageLog += msg =>
+        {
+            Console.WriteLine(msg);
+            File.AppendAllText("log.txt", msg + Environment.NewLine);
+        };
 
         Console.WriteLine("Deongeons and Dragons");
         Console.WriteLine("choose a hero");
